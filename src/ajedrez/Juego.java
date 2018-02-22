@@ -59,10 +59,6 @@ public class Juego {
         return null;
     }
     
-    public void moverJuego(Movimiento mov, Tablero tablero){
-        
-    }
-    
     @Override
     public String toString(){
         String color = "negras";

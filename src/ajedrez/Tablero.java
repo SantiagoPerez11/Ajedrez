@@ -83,4 +83,9 @@ public class Tablero {
         return tablero[fila][columna];
     }
     
+    public void moverJuego(Movimiento mov, Tablero tablero){
+        if(tablero.buscarPieza(mov.getPosInicial().getFila(), mov.getPosFinal().getColumna()).puedeMover(mov) == true){
+            
+        }
+    }
 }
