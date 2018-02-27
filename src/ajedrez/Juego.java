@@ -70,9 +70,9 @@ public class Juego {
             
             if (introduccion.length() != 4) {
                 System.out.println("Jugada inválida. Introduce otra.");
-            } else if (tablero.tablero[mov.getPosInicial().getFila()][mov.getPosInicial().getColumna()].getColor() != this.toString().toUpperCase().charAt(7)){
+            } /*else if (tablero.tablero[mov.getPosInicial().getFila()][mov.getPosInicial().getColumna()].getColor() != this.toString().toUpperCase().charAt(16)){
                 System.out.println("Mueve una pieza de tu color.");
-            }        
+            }   */     
             else {
                 pintar(tablero);
                 turno++;
