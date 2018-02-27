@@ -63,15 +63,17 @@ public class Juego {
             }
             System.out.println("Introduce tu jugada.");
             introduccion = lector.nextLine().toUpperCase();
-            mov.setPosInicial(introduccion.charAt(1)-49, introduccion.charAt(0)-65);
-            mov.setPosFinal(introduccion.charAt(3)-49, introduccion.charAt(2)-65);
-            System.out.println(mov);
+            mov.setPosInicial(introduccion.charAt(0)-65, introduccion.charAt(1)-49);
+            mov.setPosFinal(introduccion.charAt(2)-65, introduccion.charAt(3)-49);
                     
             tablero.moverJuego(mov);
             
             if (introduccion.length() != 4) {
                 System.out.println("Jugada inválida. Introduce otra.");
-            } else {
+            } else if (tablero.tablero[mov.getPosInicial().getFila()][mov.getPosInicial().getColumna()].getColor() != this.toString().toUpperCase().charAt(7)){
+                System.out.println("Mueve una pieza de tu color.");
+            }        
+            else {
                 pintar(tablero);
                 turno++;
             }
