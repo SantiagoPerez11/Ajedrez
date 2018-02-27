@@ -25,8 +25,6 @@ public abstract class Pieza {
         return color;
     }
     
-    public abstract boolean puedeMover(Movimiento movimiento);
-
     public char getNombre() {
         return nombre;
     }
@@ -34,4 +32,6 @@ public abstract class Pieza {
     public void setNombre(char nombre) {
         this.nombre = nombre;
     }
+    
+    public abstract boolean puedeMover(Movimiento movimiento);
 }
