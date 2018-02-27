@@ -19,11 +19,6 @@ class Posicion {
     public Posicion(int columna, int fila) {
         this.columna = columna;
         this.fila = fila;
-    }  
-
-    @Override
-    public String toString() {
-        return "Posicion{" + "fila=" + fila + ", columna=" + columna + '}';
     }
     
     public int getFila() {
@@ -42,5 +37,9 @@ class Posicion {
         this.columna = columna;
     }
     
+    @Override
+    public String toString() {
+        return "Posicion{" + "fila=" + fila + ", columna=" + columna + '}';
+    }
     
 }
