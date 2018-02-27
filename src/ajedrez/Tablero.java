@@ -72,20 +72,22 @@ public class Tablero {
     }
     
     public void ponerPieza(Pieza pieza, Posicion pos){
-        tablero[pos.getFila()][pos.getColumna()] = pieza;
+        tablero[pos.getColumna()][pos.getFila()] = pieza;
     }
     
     public void quitarPieza(Posicion pos){
-        tablero[pos.getFila()][pos.getColumna()] = null;
+        tablero[pos.getColumna()][pos.getFila()] = null;
     }
     
     public Pieza buscarPieza(int fila, int columna){
         return tablero[fila][columna];
     }
     
-    public void moverJuego(Movimiento mov, Tablero tablero){
-        if(tablero.buscarPieza(mov.getPosInicial().getFila(), mov.getPosFinal().getColumna()).puedeMover(mov) == true){
-            
+    public void moverJuego(Movimiento mov){
+        if(buscarPieza(mov.getPosInicial().getFila(), mov.getPosInicial().getColumna()).puedeMover(mov) == true && hayPiezasEntre(mov) == false){
+            Pieza aux = tablero[mov.getPosInicial().getColumna()][mov.getPosInicial().getFila()];
+            quitarPieza(mov.getPosInicial());
+            ponerPieza(aux, mov.getPosFinal());
         }
     }
 }

@@ -24,28 +24,10 @@ public class Juego {
     }
 
     public void inicializar(Tablero tablero) {
-        Scanner lector = new Scanner(System.in);
-        Movimiento mov = new Movimiento();
         System.out.println("¡EMPIEZA EL JUEGO!");
         System.out.println();
         pintar(tablero);
-        do {
-            if (turno < 98) {
-                System.out.println("Turno " + turno + ". " + this.toString());
-            } else {
-                System.out.println("Último movimiento de: " + this.toString());
-            }
-            System.out.println("Introduce tu jugada.");
-            
-            if(lector.nextLine().length() != 4 || mov.movValido() == false){
-                System.out.println("Jugada inválida. Introduce otra.");
-                turno--;
-            }
-            
-            pintar(tablero);
-            
-            turno++;
-        } while (turno <= 99);
+        jugada(tablero);
     }
 
     public void pintar(Tablero tablero) {
@@ -71,10 +53,28 @@ public class Juego {
 
     public Movimiento jugada(Tablero tablero) {
         Scanner lector = new Scanner(System.in);
-        String jugada = new String();
-        System.out.println("Introduce la jugada");
-        jugada = lector.nextLine();
-        return null;
+        Movimiento mov = new Movimiento();
+        String introduccion = new String();
+        do {
+            if (turno < 98) {
+                System.out.println("Turno " + turno + ". " + this.toString());
+            } else {
+                System.out.println("Último movimiento de: " + this.toString());
+            }
+            System.out.println("Introduce tu jugada.");
+            introduccion = lector.nextLine().toUpperCase();
+            mov.setPosInicial(introduccion.charAt(1)-49, introduccion.charAt(0)-65);
+            mov.setPosFinal(introduccion.charAt(3)-49, introduccion.charAt(2)-65);
+            tablero.moverJuego(mov);
+            
+            if (introduccion.length() != 4 || mov.movValido() == false) {
+                System.out.println("Jugada inválida. Introduce otra.");
+            } else {
+                pintar(tablero);
+                turno++;
+            }
+        } while (turno <= 99);
+        return mov;
     }
 
     @Override

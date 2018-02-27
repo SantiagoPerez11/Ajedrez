@@ -30,16 +30,16 @@ class Movimiento {
         return posInicial;
     }
 
-    public void setPosInicial(Posicion posInicial) {
-        this.posInicial = posInicial;
+    public void setPosInicial(int posInicial, int posInicial2) {
+        this.posInicial = new Posicion(posInicial, posInicial2);
     }
 
     public Posicion getPosFinal() {
         return posFinal;
     }
 
-    public void setPosFinal(Posicion posFinal) {
-        this.posFinal = posFinal;
+    public void setPosFinal(int posFinal, int posFinal2) {
+        this.posFinal = new Posicion(posFinal, posFinal2);
     }
     
     //
@@ -72,8 +72,8 @@ class Movimiento {
         return 2;
     }
     
-    public boolean movValido(Movimiento mov, Pieza pieza){
-        if(pieza.getClass())
+    public boolean movValido(){
+        return true;
     }
     
 }
