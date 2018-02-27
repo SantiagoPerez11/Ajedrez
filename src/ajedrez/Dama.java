@@ -37,5 +37,5 @@ public class Dama extends Pieza{
             puedeMover = true;
         return puedeMover;
     }
-    
+    //Sin cambios
 }
