@@ -67,17 +67,12 @@ public class Tablero {
         return hayPiezasEntre;
     }
 
-    @Override
-    public String toString() {
-        return null;
-    }
-
     public void ponerPieza(Pieza pieza, Posicion pos) {
-        tablero[pos.getColumna()][pos.getFila()] = pieza;
+        tablero[pos.getFila()][pos.getColumna()] = pieza;
     }
 
     public void quitarPieza(Posicion pos) {
-        tablero[pos.getColumna()][pos.getFila()] = null;
+        tablero[pos.getFila()][pos.getColumna()] = null;
     }
 
     public Pieza buscarPieza(int fila, int columna) {
@@ -87,11 +82,16 @@ public class Tablero {
     public boolean moverJuego(Movimiento mov) {
         boolean moverJuego = false;
         if ( buscarPieza(mov.getPosInicial().getFila(), mov.getPosInicial().getColumna()).puedeMover(mov) == true && hayPiezasEntre(mov) == false) {
-            Pieza aux = tablero[mov.getPosInicial().getColumna()][mov.getPosInicial().getFila()];
+            Pieza aux = tablero[mov.getPosInicial().getFila()][mov.getPosInicial().getColumna()];
             quitarPieza(mov.getPosInicial());
             ponerPieza(aux, mov.getPosFinal());
             moverJuego = true;
         }
         return moverJuego;
+    }
+    
+    @Override
+    public String toString() {
+        return null;
     }
 }
