@@ -10,6 +10,12 @@ package ajedrez;
  * @author santy
  */
 public class Caballo extends Pieza{
+    
+    final int valor = 3;
+    
+    public int getValor() {
+        return valor;
+    }
 
     public Caballo() {
         color = 'N';

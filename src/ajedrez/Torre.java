@@ -10,6 +10,12 @@ package ajedrez;
  * @author santy
  */
 public class Torre extends Pieza{
+    
+    final int valor = 5;
+    
+    public int getValor() {
+        return valor;
+    }
 
     public Torre() {
         color = 'N';
@@ -17,10 +23,6 @@ public class Torre extends Pieza{
 
     public Torre(char color) {
         super(color);
-    }
-    
-    public void movimiento(){
-        
     }
     
     @Override

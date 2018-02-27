@@ -10,6 +10,12 @@ package ajedrez;
  * @author santy
  */
 public class Peon extends Pieza{
+    
+    final int valor = 1;
+    
+    public int getValor() {
+        return valor;
+    }
 
     public Peon() {
         color = 'N';

@@ -11,6 +11,12 @@ package ajedrez;
  */
 public class Alfil extends Pieza{
 
+    final int valor = 4;
+    
+    public int getValor() {
+        return valor;
+    }
+    
     public Alfil() {
         color = 'N';
     }

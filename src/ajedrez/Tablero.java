@@ -16,8 +16,8 @@ public class Tablero {
 
     public Tablero() {
         tablero[0][0] = new Torre();
-        tablero[7][0] = new Torre();
-        tablero[0][7] = new Torre('B');
+        tablero[0][7] = new Torre();
+        tablero[7][0] = new Torre('B');
         tablero[7][7] = new Torre('B');
         for (int i = 0; i < 8; i++) {
             tablero[1][i] = new Peon();

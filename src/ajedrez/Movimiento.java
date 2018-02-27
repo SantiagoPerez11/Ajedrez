@@ -10,8 +10,8 @@ package ajedrez;
  * @author santy
  */
 class Movimiento {
-    private Posicion posInicial;
-    private Posicion posFinal;
+    protected Posicion posInicial;
+    protected Posicion posFinal;
 
     //
     
@@ -45,11 +45,19 @@ class Movimiento {
     //
     
     public boolean movVertical(){
-        return false;
+        boolean esVertical = false;
+        if(posInicial.getColumna() == posFinal.getColumna() && posInicial != posFinal){
+            esVertical = true;
+        }
+        return esVertical;
     }
     
     public boolean movHorizontal(){
-        return false;
+        boolean esHorizontal = false;
+        if(posInicial.getFila() == posFinal.getFila() && posInicial != posFinal){
+            esHorizontal = true;
+        }
+        return esHorizontal;
     }
     
     public boolean movDiagonal(){
@@ -62,6 +70,10 @@ class Movimiento {
     
     public int saltoVertical(){
         return 2;
+    }
+    
+    public boolean movValido(Movimiento mov, Pieza pieza){
+        if(pieza.getClass())
     }
     
 }
