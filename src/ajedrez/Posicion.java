@@ -20,6 +20,11 @@ class Posicion {
         this.columna = columna;
         this.fila = fila;
     }  
+
+    @Override
+    public String toString() {
+        return "Posicion{" + "fila=" + fila + ", columna=" + columna + '}';
+    }
     
     public int getFila() {
         return fila;

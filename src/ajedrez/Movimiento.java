@@ -61,19 +61,33 @@ class Movimiento {
     }
     
     public boolean movDiagonal(){
-        return false;
+        boolean esDiagonal = false;
+        if(Math.abs(saltoHorizontal()) == Math.abs(saltoVertical())){
+            esDiagonal = true;
+        }
+        return esDiagonal;
     }
     
     public int saltoHorizontal(){
-        return 800;
+        int saltoH;
+        saltoH = posFinal.getColumna() - posInicial.getColumna();
+        return saltoH;
     }
     
     public int saltoVertical(){
-        return 2;
+        int saltoV;
+        saltoV = posFinal.getFila() - posInicial.getFila();
+        return saltoV;
     }
     
     public boolean movValido(){
-        return true;
+        boolean movValido = true;
+        return movValido;
+    }
+
+    @Override
+    public String toString() {
+        return "Movimiento{" + "posInicial=" + posInicial + ", posFinal=" + posFinal + '}';
     }
     
 }

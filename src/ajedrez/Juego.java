@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 public class Juego {
 
-    private int turno = 1; //0 Negras 1 Blancas
+    protected int turno = 1; //0 Negras 1 Blancas
 
     public int getTurno() {
         return turno;
@@ -65,9 +65,11 @@ public class Juego {
             introduccion = lector.nextLine().toUpperCase();
             mov.setPosInicial(introduccion.charAt(1)-49, introduccion.charAt(0)-65);
             mov.setPosFinal(introduccion.charAt(3)-49, introduccion.charAt(2)-65);
+            System.out.println(mov);
+                    
             tablero.moverJuego(mov);
             
-            if (introduccion.length() != 4 || mov.movValido() == false) {
+            if (introduccion.length() != 4) {
                 System.out.println("Jugada inválida. Introduce otra.");
             } else {
                 pintar(tablero);

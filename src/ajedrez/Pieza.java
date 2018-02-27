@@ -26,4 +26,12 @@ public abstract class Pieza {
     }
     
     public abstract boolean puedeMover(Movimiento movimiento);
+
+    public char getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(char nombre) {
+        this.nombre = nombre;
+    }
 }
