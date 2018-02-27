@@ -37,5 +37,5 @@ public class Peon extends Pieza{
             puedeMover = true;
         return puedeMover;
     }
-    
+    //No ha habido cambios en peon.
 }
