@@ -37,5 +37,5 @@ public class Alfil extends Pieza{
             puedeMover = true;
         return puedeMover;
     }
-    
+    //Sin Cambios
 }
