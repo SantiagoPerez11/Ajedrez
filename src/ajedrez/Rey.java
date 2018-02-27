@@ -25,10 +25,12 @@ public class Rey extends Pieza{
     }
     
     @Override
-    public boolean puedeMover(Movimiento movimiento) {
+    public boolean puedeMover(Movimiento mov) {
         boolean puedeMover = false;
-        if(movimiento.movHorizontal() || movimiento.movVertical() || movimiento.movDiagonal())
-            puedeMover = true;
+        if(mov.movHorizontal() || mov.movVertical() || mov.movDiagonal()){
+            if(Math.abs(mov.saltoVertical()) == 1 || Math.abs(mov.saltoHorizontal()) == 1 || Math.abs(mov.saltoDiagonal()) == 1)
+                puedeMover = true;
+        }
         return puedeMover;
     }
     
