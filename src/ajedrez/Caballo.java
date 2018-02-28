@@ -1,8 +1,7 @@
+package ajedrez;
 /**
  * Caballo hereda de la clase Pieza
  */
-package ajedrez;
-
 public class Caballo extends Pieza{
 
     /**

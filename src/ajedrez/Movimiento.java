@@ -1,9 +1,7 @@
+package ajedrez;
 /**
  * Métodos de configuración de movimiento.
  */
-
-package ajedrez;
-
 class Movimiento {
     /**
      * Atributos de posicion inicial y posicion final de tipo posicion.

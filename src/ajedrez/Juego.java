@@ -1,9 +1,7 @@
+package ajedrez;
 /**
  * Métodos con los que se ejecuta el juego. 
  */
-
-package ajedrez;
-
 import java.util.Scanner;
 
 /**

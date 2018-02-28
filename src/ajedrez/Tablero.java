@@ -1,9 +1,7 @@
+package ajedrez;
 /**
  * Creación y funcionamiento del tablero.
  */
-
-package ajedrez;
-
 public class Tablero {
 
     /**

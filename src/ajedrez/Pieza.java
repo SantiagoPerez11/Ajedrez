@@ -1,9 +1,7 @@
+package ajedrez;
 /**
  * Clase abstracta de la que heredan las demás piezas.
  */
-
-package ajedrez;
-
 public abstract class Pieza {
     
     /**

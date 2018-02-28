@@ -1,9 +1,7 @@
+package ajedrez;
 /**
  * Torre hereda de la clase Pieza
  */
-
-package ajedrez;
-
 public class Torre extends Pieza{
 
     /**

@@ -1,10 +1,7 @@
+package ajedrez;
 /**
  * Peon hereda de la clase Pieza
  */
-
-package ajedrez;
-
-
 public class Peon extends Pieza {
 
     /**

@@ -1,9 +1,7 @@
+package ajedrez;
 /**
  * Rey hereda de la clase Pieza
  */
-
-package ajedrez;
-
 public class Rey extends Pieza{
 
     /**

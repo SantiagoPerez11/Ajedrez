@@ -1,11 +1,7 @@
+
+package ajedrez;
 /**
  * main class donde se ejecuta el juego.
- */
-package ajedrez;
-
-/**
- *
- * @author santy
  */
 public class Ajedrez {
 
