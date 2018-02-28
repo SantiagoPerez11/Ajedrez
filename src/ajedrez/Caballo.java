@@ -31,7 +31,7 @@ public class Caballo extends Pieza{
     }
 
     @Override
-    public boolean puedeMover(Movimiento mov) {
+    public boolean puedeMover(Movimiento mov, Tablero tablero) {
         boolean puedeMover = false;
         if(Math.abs(mov.saltoVertical()) == 2 && Math.abs(mov.saltoHorizontal()) == 1 || Math.abs(mov.saltoVertical()) == 1 && Math.abs(mov.saltoHorizontal()) == 2)
             puedeMover = true;

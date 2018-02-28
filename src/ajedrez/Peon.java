@@ -31,7 +31,7 @@ public class Peon extends Pieza {
     }
 
     @Override
-    public boolean puedeMover(Movimiento mov) {
+    public boolean puedeMover(Movimiento mov, Tablero tablero) {
         boolean puedeMover = false;
         if (color == 'B' && mov.movVertical()) {
             if (mov.saltoVertical() == -1) {
@@ -47,6 +47,22 @@ public class Peon extends Pieza {
                 puedeMover = true;
             }
         }
+        if(color == 'B' && mov.saltoVertical() == -1 && Math.abs(mov.saltoHorizontal()) == 1){
+            if(tablero.buscarPieza(mov.getPosFinal().getFila(), mov.getPosFinal().getColumna()) != null){
+                puedeMover = true;
+            }
+        }
+        
+        if(color == 'N' && mov.saltoVertical() == 1 && Math.abs(mov.saltoHorizontal()) == 1){
+            if(tablero.buscarPieza(mov.getPosFinal().getFila(), mov.getPosFinal().getColumna()) != null){
+                puedeMover = true;
+            }
+        }
+        
+        if(mov.movVertical() == true && tablero.hayPieza(mov.posFinal) == true){
+            puedeMover = false;
+        }
+            
         return puedeMover;
     }
 }

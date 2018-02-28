@@ -31,7 +31,7 @@ public class Dama extends Pieza{
     }
 
     @Override
-    public boolean puedeMover(Movimiento movimiento) {
+    public boolean puedeMover(Movimiento movimiento, Tablero tablero) {
         boolean puedeMover = false;
         if(movimiento.movHorizontal() || movimiento.movVertical() || movimiento.movDiagonal())
             puedeMover = true;

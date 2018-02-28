@@ -81,7 +81,7 @@ public class Tablero {
 
     public boolean moverJuego(Movimiento mov) {
         boolean moverJuego = false;
-        if ( buscarPieza(mov.getPosInicial().getFila(), mov.getPosInicial().getColumna()).puedeMover(mov) == true && hayPiezasEntre(mov) == false) {
+        if ( buscarPieza(mov.getPosInicial().getFila(), mov.getPosInicial().getColumna()).puedeMover(mov, this) == true && hayPiezasEntre(mov) == false) {
             Pieza aux = tablero[mov.getPosInicial().getFila()][mov.getPosInicial().getColumna()];
             quitarPieza(mov.getPosInicial());
             ponerPieza(aux, mov.getPosFinal());

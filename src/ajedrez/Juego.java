@@ -75,7 +75,7 @@ public class Juego {
             else if(introduccion.charAt(1) < '1' || introduccion.charAt(1) > '8' || introduccion.charAt(3) < '1' || introduccion.charAt(3) > '8'){
                 System.out.println("Has introducido un número fuera de los límites del tablero. Introduce otra vez la jugada.");
             }
-            else if(tablero.buscarPieza(introduccion.charAt(1)-49, introduccion.charAt(0)-65).puedeMover(mov) == false){
+            else if(tablero.tablero[introduccion.charAt(1)-49][introduccion.charAt(0)-65] == null){
                 System.out.println("Ese movimiento no se puede hacer. Introduce otro.");
             }
             else if(tablero.hayPieza((int)introduccion.charAt(1)-49, (int)introduccion.charAt(0)-65) == false){
@@ -83,7 +83,13 @@ public class Juego {
             }
             else if (tablero.buscarPieza((int)introduccion.charAt(1)-49, (int)introduccion.charAt(0)-65).getColor() != this.toString().toUpperCase().charAt(0)){
                 System.out.println("No es el turno de ese color. Introduce un movimiento válido.");
-            }   
+            }
+            else if(tablero.hayPieza(introduccion.charAt(3)-49, introduccion.charAt(2)-65) == true && tablero.tablero[mov.getPosFinal().getFila()][mov.getPosFinal().getColumna()].color == tablero.tablero[mov.getPosInicial().getFila()][mov.getPosInicial().getColumna()].color){
+                    System.out.println("Hay una pieza de tu color en esa casilla. Introduce otro movimiento");
+            }
+            else if(tablero.tablero[mov.getPosInicial().getFila()][mov.getPosInicial().getColumna()].puedeMover(mov, tablero) == false){
+                System.out.println("La pieza no puede moverse hacia esa posición");
+            }
             else {
                 tablero.moverJuego(mov);
                 pintar(tablero);

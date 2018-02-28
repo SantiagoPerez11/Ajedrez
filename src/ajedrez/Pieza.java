@@ -33,5 +33,5 @@ public abstract class Pieza {
         this.nombre = nombre;
     }
     
-    public abstract boolean puedeMover(Movimiento movimiento);
+    public abstract boolean puedeMover(Movimiento movimiento, Tablero tablero);
 }
