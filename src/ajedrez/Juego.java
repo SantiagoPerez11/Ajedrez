@@ -63,34 +63,29 @@ public class Juego {
             }
             System.out.println("Introduce tu jugada.");
             introduccion = lector.nextLine().toUpperCase();
-            mov.setPosInicial(introduccion.charAt(1)-49, introduccion.charAt(0)-65);
-            mov.setPosFinal(introduccion.charAt(3)-49, introduccion.charAt(2)-65);
-            
+
             if (introduccion.length() != 4) {
                 System.out.println("Jugada inválida. Introduce otra.");
-            } 
-            else if(introduccion.charAt(0) < 'A' || introduccion.charAt(0) > 'H' || introduccion.charAt(2) < 'A' || introduccion.charAt(2) > 'H'){
+            } else {
+                mov.setPosInicial(introduccion.charAt(1) - 49, introduccion.charAt(0) - 65);
+                mov.setPosFinal(introduccion.charAt(3) - 49, introduccion.charAt(2) - 65);
+            }
+
+            if (introduccion.charAt(0) < 'A' || introduccion.charAt(0) > 'H' || introduccion.charAt(2) < 'A' || introduccion.charAt(2) > 'H') {
                 System.out.println("Has introducido una letra fuera de los límites del tablero. Introduce otra vez la jugada.");
-            }
-            else if(introduccion.charAt(1) < '1' || introduccion.charAt(1) > '8' || introduccion.charAt(3) < '1' || introduccion.charAt(3) > '8'){
+            } else if (introduccion.charAt(1) < '1' || introduccion.charAt(1) > '8' || introduccion.charAt(3) < '1' || introduccion.charAt(3) > '8') {
                 System.out.println("Has introducido un número fuera de los límites del tablero. Introduce otra vez la jugada.");
-            }
-            else if(tablero.tablero[introduccion.charAt(1)-49][introduccion.charAt(0)-65] == null){
+            } else if (tablero.tablero[introduccion.charAt(1) - 49][introduccion.charAt(0) - 65] == null) {
                 System.out.println("Ese movimiento no se puede hacer. Introduce otro.");
-            }
-            else if(tablero.hayPieza((int)introduccion.charAt(1)-49, (int)introduccion.charAt(0)-65) == false){
+            } else if (tablero.hayPieza((int) introduccion.charAt(1) - 49, (int) introduccion.charAt(0) - 65) == false) {
                 System.out.println("En esa casilla no hay ninguna pieza. Introduce otra jugada.");
-            }
-            else if (tablero.buscarPieza((int)introduccion.charAt(1)-49, (int)introduccion.charAt(0)-65).getColor() != this.toString().toUpperCase().charAt(0)){
+            } else if (tablero.buscarPieza((int) introduccion.charAt(1) - 49, (int) introduccion.charAt(0) - 65).getColor() != this.toString().toUpperCase().charAt(0)) {
                 System.out.println("No es el turno de ese color. Introduce un movimiento válido.");
-            }
-            else if(tablero.hayPieza(introduccion.charAt(3)-49, introduccion.charAt(2)-65) == true && tablero.tablero[mov.getPosFinal().getFila()][mov.getPosFinal().getColumna()].color == tablero.tablero[mov.getPosInicial().getFila()][mov.getPosInicial().getColumna()].color){
-                    System.out.println("Hay una pieza de tu color en esa casilla. Introduce otro movimiento");
-            }
-            else if(tablero.tablero[mov.getPosInicial().getFila()][mov.getPosInicial().getColumna()].puedeMover(mov, tablero) == false){
+            } else if (tablero.hayPieza(introduccion.charAt(3) - 49, introduccion.charAt(2) - 65) == true && tablero.tablero[mov.getPosFinal().getFila()][mov.getPosFinal().getColumna()].color == tablero.tablero[mov.getPosInicial().getFila()][mov.getPosInicial().getColumna()].color) {
+                System.out.println("Hay una pieza de tu color en esa casilla. Introduce otro movimiento");
+            } else if (tablero.tablero[mov.getPosInicial().getFila()][mov.getPosInicial().getColumna()].puedeMover(mov, tablero) == false) {
                 System.out.println("La pieza no puede moverse hacia esa posición");
-            }
-            else {
+            } else {
                 tablero.moverJuego(mov);
                 pintar(tablero);
                 turno++;
