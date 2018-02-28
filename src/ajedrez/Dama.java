@@ -10,19 +10,17 @@ package ajedrez;
  * @author santy
  */
 public class Dama extends Pieza{
-    
-    final int valor = 10;
-    
-    public int getValor() {
-        return valor;
-    }
-
+  
     public Dama() {
         color = 'N';
+        nombre = 'D';
+        valor = 10;
     }
 
     public Dama(char color) {
         super(color);
+        nombre = 'D';
+        valor = 10;
     }
     
     @Override

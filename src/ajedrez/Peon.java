@@ -11,18 +11,16 @@ package ajedrez;
  */
 public class Peon extends Pieza {
 
-    final int valor = 1;
-
-    public int getValor() {
-        return valor;
-    }
-
     public Peon() {
         color = 'N';
+        nombre = 'P';
+        valor = 1;
     }
 
     public Peon(char color) {
         super(color);
+        nombre = 'P';
+        valor = 1;
     }
 
     @Override

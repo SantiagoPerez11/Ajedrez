@@ -13,10 +13,14 @@ public class Rey extends Pieza{
 
     public Rey() {
         color = 'N';
+        nombre = 'R';
+        valor = 58;
     }
 
     public Rey(char color) {
         super(color);
+        nombre = 'R';
+        valor = 58;
     }
     
     @Override

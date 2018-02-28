@@ -12,6 +12,7 @@ package ajedrez;
 public abstract class Pieza {
     protected char color;
     protected char nombre;
+    protected int valor;
 
     public Pieza() {
         
@@ -31,6 +32,14 @@ public abstract class Pieza {
 
     public void setNombre(char nombre) {
         this.nombre = nombre;
+    }
+    
+    public int getValor() {
+        return valor;
+    }
+
+    public void setValor(int valor) {
+        this.valor = valor;
     }
     
     public abstract boolean puedeMover(Movimiento movimiento, Tablero tablero);

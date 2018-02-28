@@ -10,19 +10,17 @@ package ajedrez;
  * @author santy
  */
 public class Alfil extends Pieza{
-
-    final int valor = 4;
-    
-    public int getValor() {
-        return valor;
-    }
     
     public Alfil() {
         color = 'N';
+        nombre = 'A';
+        valor = 4;
     }
 
     public Alfil(char color) {
         super(color);
+        nombre = 'A';
+        valor = 4;
     }
     
     @Override

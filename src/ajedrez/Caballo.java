@@ -10,21 +10,17 @@ package ajedrez;
  * @author santy
  */
 public class Caballo extends Pieza{
-    
-    final int valor = 3;
-    
-    public int getValor() {
-        return valor;
-    }
 
     public Caballo() {
-        nombre = 'C';
         color = 'N';
+        nombre = 'C';
+        valor = 3;
     }
 
     public Caballo(char color) {
         super(color);
         nombre = 'C';
+        valor = 3;
     }
     
     @Override

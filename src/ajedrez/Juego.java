@@ -20,7 +20,7 @@ public class Juego {
      * color blanco.
      */
     public Juego() {
-        this.turno = 1;
+        
     }
 
     /**
@@ -51,6 +51,7 @@ public class Juego {
         System.out.println();
         pintar(tablero);
         jugada(tablero);
+        puntuacion(tablero);
     }
 
     public void pintar(Tablero tablero) {
@@ -79,10 +80,10 @@ public class Juego {
         Movimiento mov = new Movimiento();
         String introduccion = new String();
         do {
-            if (turno < 98) {
+            if (turno < 99) {
                 System.out.println("Turno número " + turno + ". Juegan: " + this.toString());
             } else {
-                System.out.println("Último movimiento de: " + this.toString());
+                System.out.println("¡Último movimiento de " + this.toString() + "!");
             }
 
             System.out.println("Introduce tu jugada.");
@@ -115,8 +116,30 @@ public class Juego {
                 pintar(tablero);
                 turno++;
             }
-        } while (turno <= 99);
+        } while (turno < 101);
         return mov;
+    }
+    
+    public void puntuacion(Tablero tablero){
+        int blanco = 0; 
+        int negro = 0;
+        
+        for (int i = 0; i < tablero.tablero.length; i++) {
+            for (int j = 0; j < tablero.tablero.length; j++) {
+                if(tablero.buscarPieza(i, j) != null && tablero.buscarPieza(i, j).getColor() == 'B')
+                    blanco += tablero.buscarPieza(i, j).getValor();
+                else if(tablero.buscarPieza(i, j) != null)
+                    negro += tablero.buscarPieza(i, j).getValor();
+            }
+        }
+        if(blanco > negro)
+            System.out.print("¡El ganador es: el jugador blanco con: " + blanco + " puntos! \n");
+        else if(negro > blanco)
+            System.out.print("¡El ganador es: el jugador negro con: " + negro + " puntos! \n");
+        else
+            System.out.println("¡EMPATE! ¡BIEN JUGADO!");
+        
+        System.out.println("Puntuación final: \nEl jugador negro ha terminado con: " + negro + " puntos. \nEl jugador blanco ha terminado con: " + blanco + " puntos.");
     }
 
     @Override
