@@ -85,11 +85,6 @@ class Movimiento {
         saltoD = Math.abs((posInicial.getFila() + posInicial.getColumna()) - (posFinal.getFila() + posFinal.getColumna()));
         return saltoD;
     }
-    
-    public boolean movValido(){
-        boolean movValido = true;
-        return movValido;
-    }
 
     @Override
     public String toString() {

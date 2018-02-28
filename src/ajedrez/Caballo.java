@@ -31,8 +31,10 @@ public class Caballo extends Pieza{
     }
 
     @Override
-    public boolean puedeMover(Movimiento movimiento) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean puedeMover(Movimiento mov) {
+        boolean puedeMover = false;
+        if(Math.abs(mov.saltoVertical()) == 2 && Math.abs(mov.saltoHorizontal()) == 1 || Math.abs(mov.saltoVertical()) == 1 && Math.abs(mov.saltoHorizontal()) == 2)
+            puedeMover = true;
+        return puedeMover;
     }
-    //Sin cambios
 }

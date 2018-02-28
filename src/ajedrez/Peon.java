@@ -9,10 +9,10 @@ package ajedrez;
  *
  * @author santy
  */
-public class Peon extends Pieza{
-    
+public class Peon extends Pieza {
+
     final int valor = 1;
-    
+
     public int getValor() {
         return valor;
     }
@@ -20,22 +20,33 @@ public class Peon extends Pieza{
     public Peon() {
         color = 'N';
     }
-    
+
     public Peon(char color) {
         super(color);
     }
-    
+
     @Override
-    public String toString(){
+    public String toString() {
         return "[P]";
     }
 
     @Override
-    public boolean puedeMover(Movimiento movimiento) {
+    public boolean puedeMover(Movimiento mov) {
         boolean puedeMover = false;
-        if(movimiento.movVertical() || movimiento.movDiagonal())
-            puedeMover = true;
+        if (color == 'B' && mov.movVertical()) {
+            if (mov.saltoVertical() == -1) {
+                puedeMover = true;
+            } else if (mov.saltoVertical() >= -2 && mov.saltoVertical() < 0 && mov.getPosInicial().getFila() == 6) {
+                puedeMover = true;
+            }
+        }
+        if (color == 'N' && mov.movVertical()) {
+            if (mov.saltoVertical() == 1) {
+                puedeMover = true;
+            } else if (mov.saltoVertical() <= 2 && mov.saltoVertical() > 0 && mov.getPosInicial().getFila() == 1) {
+                puedeMover = true;
+            }
+        }
         return puedeMover;
     }
-    //No ha habido cambios en peon.
 }

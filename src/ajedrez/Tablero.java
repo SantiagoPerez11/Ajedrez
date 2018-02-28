@@ -90,6 +90,14 @@ public class Tablero {
         return moverJuego;
     }
     
+//    public boolean movValido(Tablero tablero, Movimiento mov){
+//        boolean movValido = false;
+//        if(tablero.buscarPieza(0, 0)){
+//            movValido = true;
+//        }
+//        return movValido;
+//    }
+    
     @Override
     public String toString() {
         return null;
