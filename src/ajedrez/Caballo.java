@@ -18,11 +18,13 @@ public class Caballo extends Pieza{
     }
 
     public Caballo() {
+        nombre = 'C';
         color = 'N';
     }
 
     public Caballo(char color) {
         super(color);
+        nombre = 'C';
     }
     
     @Override

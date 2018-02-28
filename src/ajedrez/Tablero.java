@@ -63,8 +63,57 @@ public class Tablero {
     }
 
     public boolean hayPiezasEntre(Movimiento mov) {
-        boolean hayPiezasEntre = false;
-        return hayPiezasEntre;
+        boolean hayP = false;
+        if (buscarPieza(mov.getPosInicial().getFila(), mov.getPosInicial().getColumna()).getNombre() == 'C') {
+            hayP = false;
+        } else if (mov.movHorizontal()) {
+            for (int i = mov.getPosInicial().getColumna() + 1; i < mov.getPosFinal().getColumna(); i++) {
+                if (hayPieza(mov.getPosInicial().getFila(), i)) {
+                    hayP = true;
+                }
+            }
+            for (int i = mov.getPosFinal().getColumna() + 1; i < mov.getPosInicial().getColumna(); i++) {
+                if (hayPieza(mov.getPosFinal().getFila(), i)) {
+                    hayP = true;
+                }
+            }
+
+        } else if (mov.movVertical()) {
+            for (int i = mov.getPosInicial().getFila() + 1; i < mov.getPosFinal().getFila(); i++) {
+                if (hayPieza(i, mov.getPosInicial().getColumna())) {
+                    hayP = true;
+                }
+            }
+            for (int i = mov.getPosFinal().getFila() + 1; i < mov.getPosInicial().getFila(); i++) {
+                if(hayPieza(i, mov.getPosFinal().getColumna()))
+                    hayP = true;
+            }
+      }
+        
+        else if(mov.movDiagonal()){
+            for (int i = mov.getPosInicial().getFila() - 1, j = mov.getPosInicial().getColumna() + 1; i > mov.getPosFinal().getFila() && j < mov.getPosFinal().getColumna() && hayP == false; i--, j++) {
+                if(hayPieza(i, j))
+                    hayP = true;
+            }
+            
+            for (int i = mov.getPosInicial().getFila() - 1, j = mov.getPosInicial().getColumna() - 1; i > mov.getPosFinal().getFila() && j > mov.getPosFinal().getColumna() && hayP == false; i--, j--) {
+                if(hayPieza(i, j))
+                    hayP = true;
+            }
+            
+            for (int i = mov.getPosInicial().getFila() + 1, j = mov.getPosInicial().getColumna() + 1; i < mov.getPosFinal().getFila() && j < mov.getPosFinal().getColumna() && hayP == false; i++, j++) {
+                if(hayPieza(i, j))
+                    hayP = true;
+            }
+            
+            for (int i = mov.getPosInicial().getFila() + 1, j = mov.getPosInicial().getColumna() - 1; i < mov.getPosFinal().getFila() && j > mov.getPosFinal().getColumna() && hayP == false; i--, j--) {
+                if(hayPieza(i, j))
+                    hayP = true;
+            }
+            
+        }
+
+        return hayP;
     }
 
     public void ponerPieza(Pieza pieza, Posicion pos) {
@@ -81,7 +130,7 @@ public class Tablero {
 
     public boolean moverJuego(Movimiento mov) {
         boolean moverJuego = false;
-        if ( buscarPieza(mov.getPosInicial().getFila(), mov.getPosInicial().getColumna()).puedeMover(mov, this) == true && hayPiezasEntre(mov) == false) {
+        if (buscarPieza(mov.getPosInicial().getFila(), mov.getPosInicial().getColumna()).puedeMover(mov, this) == true && hayPiezasEntre(mov) == false) {
             Pieza aux = tablero[mov.getPosInicial().getFila()][mov.getPosInicial().getColumna()];
             quitarPieza(mov.getPosInicial());
             ponerPieza(aux, mov.getPosFinal());
@@ -89,15 +138,7 @@ public class Tablero {
         }
         return moverJuego;
     }
-    
-//    public boolean movValido(Tablero tablero, Movimiento mov){
-//        boolean movValido = false;
-//        if(tablero.buscarPieza(0, 0)){
-//            movValido = true;
-//        }
-//        return movValido;
-//    }
-    
+
     @Override
     public String toString() {
         return null;
