@@ -1,3 +1,6 @@
+/**
+ * Rey hereda de la clase Pieza
+ */
 
 package ajedrez;
 
@@ -29,7 +32,7 @@ public class Rey extends Pieza{
      * El rey puede moverse hacia todas las direcciones pero solamente de uno
      * en uno. Es decir, su salto nunca puede ser mayor a uno.
      * No puede saltar otras piezas.
-     * @param movimiento - movimiento que introduce el usuario.
+     * @param mov - movimiento que introduce el usuario.
      * @param tablero tablero no necesario, utilizar en caso de serlo.
      * @return devuelve true si la pieza puede moverse y false si no.
      */

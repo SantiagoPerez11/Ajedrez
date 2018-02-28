@@ -1,3 +1,6 @@
+/**
+ * Clase abstracta de la que heredan las demás piezas.
+ */
 
 package ajedrez;
 
@@ -48,7 +51,7 @@ public abstract class Pieza {
     /**
      * Método utilizado para definir el nombre de la pieza con la que estamos
      * trabajando.
-     * El nombre es un caracter.
+     * @param nombre El nombre es un caracter.
      */
     public void setNombre(char nombre) {
         this.nombre = nombre;
@@ -66,7 +69,7 @@ public abstract class Pieza {
     /**
      * Método utilizado para definir el valor de la pieza con la que estamos
      * trabajando.
-     * El valor es un int.
+     * @param valor El valor es un int.
      */
     public void setValor(int valor) {
         this.valor = valor;

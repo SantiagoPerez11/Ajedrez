@@ -1,4 +1,6 @@
-
+/**
+ * Dama hereda de la clase Pieza
+ */
 package ajedrez;
 
 public class Dama extends Pieza{

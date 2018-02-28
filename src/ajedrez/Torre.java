@@ -1,3 +1,6 @@
+/**
+ * Torre hereda de la clase Pieza
+ */
 
 package ajedrez;
 

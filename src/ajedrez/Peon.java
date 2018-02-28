@@ -1,3 +1,6 @@
+/**
+ * Peon hereda de la clase Pieza
+ */
 
 package ajedrez;
 
@@ -35,7 +38,7 @@ public class Peon extends Pieza {
      * El peón es capaz de comer en diagonal siempre y cuando haya una pieza
      * en una de las dos casillas en diagonal (por delante de su posición).
      * No puede saltar otras piezas.
-     * @param movimiento - movimiento que introduce el usuario.
+     * @param mov - movimiento que introduce el usuario.
      * @param tablero tablero no necesario, utilizar en caso de serlo.
      * @return devuelve true si la pieza puede moverse y false si no.
      */

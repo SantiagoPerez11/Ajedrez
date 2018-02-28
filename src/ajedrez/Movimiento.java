@@ -1,3 +1,6 @@
+/**
+ * Métodos de configuración de movimiento.
+ */
 
 package ajedrez;
 
