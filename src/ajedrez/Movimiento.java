@@ -1,8 +1,10 @@
 package ajedrez;
+
 /**
  * Métodos de configuración de movimiento.
  */
-class Movimiento {
+public class Movimiento {
+    
     /**
      * Atributos de posicion inicial y posicion final de tipo posicion.
      */
@@ -133,6 +135,7 @@ class Movimiento {
     /**
      * Este método no es necesario, ni se utiliza durante la ejecución del 
      * programa. En caso de ser llamado, mostrará la posición inicial y la final.
+     * @return devuelve el String
      */
     @Override
     public String toString() {

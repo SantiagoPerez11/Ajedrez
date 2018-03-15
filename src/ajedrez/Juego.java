@@ -86,7 +86,7 @@ public class Juego {
             }
             System.out.printf("\n");
         }
-        System.out.println("  — — — — — — — — — — — — — — — —");
+        System.out.println("   --------------------------------------");
         char letra = 'A';
         System.out.print("    " + (char) (letra) + "  " + "  " + (char) (letra + 1) + "  " + "  " + (char) (letra + 2) + "  " + "  " + (char) (letra + 3) + "  " + "  " + (char) (letra + 4) + "  " + "  " + (char) (letra + 5) + "  " + "  " + (char) (letra + 6) + "  " + "  " + (char) (letra + 7) + "  \n");
     }

@@ -2,7 +2,7 @@ package ajedrez;
 /**
  * Métodos para controlar la posición de las piezas.
  */
-class Posicion {
+public class Posicion {
     /**
      * Atributos de la clase Posicion, fila y columna.
      */

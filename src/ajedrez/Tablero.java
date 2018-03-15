@@ -1,4 +1,5 @@
 package ajedrez;
+
 /**
  * Creación y funcionamiento del tablero.
  */
@@ -12,8 +13,8 @@ public class Tablero {
 
     /**
      * Constructor del tablero por defecto. Inicializa todas las posiciones del
-     * array con piezas y las ordena según su color (arriba negras y abajo blancas)
-     * El resto de huecos quedarán vacíos.
+     * array con piezas y las ordena según su color (arriba negras y abajo
+     * blancas) El resto de huecos quedarán vacíos.
      */
     public Tablero() {
         tablero[0][0] = new Torre();
@@ -42,6 +43,7 @@ public class Tablero {
     /**
      * hayPieza indica si el lugar que le estamos indicando está ocupado por una
      * pieza o no.
+     *
      * @param fila valor numerico de la fila que queremos comprobar
      * @param columna valor numerico de la columna que queremos comprobar
      * @return true si hay pieza, false si no hay.
@@ -57,6 +59,7 @@ public class Tablero {
     /**
      * hayPieza indica si el lugar que le estamos indicando está ocupado por una
      * pieza o no.
+     *
      * @param pos de tipo Posicion, compuesto por fila y columna.
      * @return si hay pieza devuelve true, si no, false.
      */
@@ -70,8 +73,10 @@ public class Tablero {
 
     /**
      * Este método se encarga de hacer el recorrido por el tablero comprobando
-     * si en las casillas que hay entre posicion inicial y posicion final comprobando
-     * si hay alguna pieza que interrumpa el movimiento de nuestra pieza.
+     * si en las casillas que hay entre posicion inicial y posicion final
+     * comprobando si hay alguna pieza que interrumpa el movimiento de nuestra
+     * pieza.
+     *
      * @param mov de tipo movimiento, es el movimiento a comprobar.
      * @return true si se encuentra alguna pieza en medio, false si el camino
      * está despejado.
@@ -99,32 +104,34 @@ public class Tablero {
                 }
             }
             for (int i = mov.getPosFinal().getFila() + 1; i < mov.getPosInicial().getFila(); i++) {
-                if(hayPieza(i, mov.getPosFinal().getColumna()))
+                if (hayPieza(i, mov.getPosFinal().getColumna())) {
                     hayP = true;
+                }
             }
-      }
-        
-        else if(mov.movDiagonal()){
+        } else if (mov.movDiagonal()) {
             for (int i = mov.getPosInicial().getFila() - 1, j = mov.getPosInicial().getColumna() + 1; i > mov.getPosFinal().getFila() && j < mov.getPosFinal().getColumna() && hayP == false; i--, j++) {
-                if(hayPieza(i, j))
+                if (hayPieza(i, j)) {
                     hayP = true;
+                }
             }
-            
+
             for (int i = mov.getPosInicial().getFila() - 1, j = mov.getPosInicial().getColumna() - 1; i > mov.getPosFinal().getFila() && j > mov.getPosFinal().getColumna() && hayP == false; i--, j--) {
-                if(hayPieza(i, j))
+                if (hayPieza(i, j)) {
                     hayP = true;
+                }
             }
-            
+
             for (int i = mov.getPosInicial().getFila() + 1, j = mov.getPosInicial().getColumna() + 1; i < mov.getPosFinal().getFila() && j < mov.getPosFinal().getColumna() && hayP == false; i++, j++) {
-                if(hayPieza(i, j))
+                if (hayPieza(i, j)) {
                     hayP = true;
+                }
             }
-            
+
             for (int i = mov.getPosInicial().getFila() + 1, j = mov.getPosInicial().getColumna() - 1; i < mov.getPosFinal().getFila() && j > mov.getPosFinal().getColumna() && hayP == false; i--, j--) {
-                if(hayPieza(i, j))
+                if (hayPieza(i, j)) {
                     hayP = true;
+                }
             }
-            
         }
 
         return hayP;
@@ -132,6 +139,7 @@ public class Tablero {
 
     /**
      * Este método se encarga de poner una pieza en el lugar que le indiquemos.
+     *
      * @param pieza a introducir.
      * @param pos posicion en la que se va a introducir.
      */
@@ -141,6 +149,7 @@ public class Tablero {
 
     /**
      * Este método se encarga de borrar una pieza del lugar que le indiquemos.
+     *
      * @param pos posicion en la que se va a eliminar la pieza.
      */
     public void quitarPieza(Posicion pos) {
@@ -148,7 +157,9 @@ public class Tablero {
     }
 
     /**
-     * Método encargado de buscar una pieza en la fila y columna que le indiquemos.
+     * Método encargado de buscar una pieza en la fila y columna que le
+     * indiquemos.
+     *
      * @param fila valor numérico de la fila que queremos observar.
      * @param columna valor numérico de la columna que queremos observar.
      * @return devuelve la pieza que haya en dicha fila y columna.
@@ -159,10 +170,11 @@ public class Tablero {
 
     /**
      * Este método se encarga de hacer el intercambio de posición de una pieza
-     * una vez se ha comprobado que el movimiento se puede realizar. En caso de 
-     * no haber ninguna pieza en el destino final, se sobreescribe el valor "null"
-     * de dicha casilla. Si hay una pieza en el destino final, esa pieza habrá sido
-     * comida en el proceso y será eliminada de la partida.
+     * una vez se ha comprobado que el movimiento se puede realizar. En caso de
+     * no haber ninguna pieza en el destino final, se sobreescribe el valor
+     * "null" de dicha casilla. Si hay una pieza en el destino final, esa pieza
+     * habrá sido comida en el proceso y será eliminada de la partida.
+     *
      * @param mov movimiento a realizar.
      * @return en el caso de ser true significará que el intercambio ha sido
      * realizado correctamente.
@@ -180,6 +192,7 @@ public class Tablero {
 
     /**
      * Este método no se utiliza durante la ejecución del programa.
+     *
      * @return devuelve null.
      */
     @Override
